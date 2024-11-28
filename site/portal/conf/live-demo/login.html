@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <title>Agrenes Live Demo </title>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="third-party/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+        <link rel="stylesheet" href="styles/live.css">
+
+        <!--SCRIPTINCLUDESTART-->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="third-party/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+        <script type="text/javascript" src="https://api.mesibo.com/mesibo3.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="mesibo/utils.js"></script>		
+        <script type="text/javascript" src="mesibo/config.js"></script>
+        <script type="text/javascript" src="scripts/app-utils.js"></script>
+        <script type="text/javascript" src="scripts/login.js"></script>
+        <script type="text/javascript" src="login/login.js"></script>
+    </head>
+
+    <body>
+        <div class="container-fluid vh-100 m-0 p-0">
+            <div class="row vh-100 m-0">
+                <div class="col-md-7 order-md-1 col-lg-8 order-lg-1 col-12 order-2 h-100 d-flex flex-column" style="background-color: #00868b;">
+                    <!--
+                    <div class="flex-dolumn w-100" id="mesibo-logo">
+                            <img width="170px" src="assets/images/mesibo-logo.png">	                
+                    </div>            
+                    -->
+                    <div class="flex-column justify-content-center flex-grow-1 overflow-auto align-items-center" style="color: white; font-family:'Helvetica'; font-size: 15px; display:flex;">
+                        <img width="170px" id="mesibo-logo" src="assets/images/mesibo-logo.png">	                
+                        <div class="justify-content-center mx-auto">
+                            <h4 style="color: white; text-align: center;">The lightest conferencing platform in the world!</h4>
+                            <div style="text-align: center;">Go ahead and try our demo!<br> Download the entire source code, rebrand, and integrate it with your own website. </div>
+                            <div style="text-align: center; margin-top: 20px;">You can also download open source mobile apps.</div>
+
+                            <div class="text-center">
+
+                                <a href="https://itunes.apple.com/us/app/mesibo-realtime-messaging-voice-video/id1222921751"><img src="https://mesibo.com/images/iphone-app.png" >
+                                </a>
+
+                                <a href="https://play.google.com/store/apps/details?id=com.mesibo.mesiboapplication">
+                                    <img src="https://mesibo.com/images/android-app.png" >
+                                </a>
+
+                            </div>
+                            <hr style="border-top: 1px solid #ccc;opacity: 30%; width: 70%">
+
+                            <ul style="list-style-position: inside; text-align: center">				
+                                <li>Standard, HD, FHD, UHD, and 4K resolution</li>
+                                <li>Multiple Camera, Multi-angle Streaming</li>
+                                <li>Multiple Screen Sharing</li>
+                                <li>Talk Detection</li>
+                                <li>Collaborative Whiteboard</li>
+                                <li>Group Voice and Video Call</li>
+                                <li>One-to-One &amp; Group Chat</li>
+                                <li>Entire source code available on GitHub for Mobile(Android) and Desktop(Web)</li>
+                            </ul>
+
+                            <hr style="border-top: 1px solid #ccc;opacity: 30%; width: 70%">
+
+                            <div class="d-flex justify-content-center">					  
+                                <a  href="https://mesibo.com/conferencing" target="_blank" style="color: white; text-decoration: none;;padding-right: 10px" ><i class="fa fa-home"></i> Home</a>
+                                <a  href="https://mesibo.com/documentation/conferencing" target="_blank" style="color: white; text-decoration: none; padding-right: 10px" ><i class="fa fa-book"></i> Documentation</a> 
+                                <a  href="https://github.com/mesibo/conferencing" target="_blank" style="color: white; text-decoration: none;"><i class="fab fa-github"></i> Source Code</a>
+                            </div>
+                        </div>				
+                    </div>
+                </div>
+                <div class="col-md-5 order-md-2 col-lg-4 order-lg-2 col-12 order-1 align-self-center" style="background-color: white;">
+                    <div id="main-login-form" class="h-100">
+                        <div style="text-align:center;" id="mesibo-logo-m">
+                            <img width="170px" src="assets/images/mesibo-logo-m.png">	                
+                        </div>  
+                        <div class="modal-header" >
+                            <h5 class="col-12 modal-title text-center">Login to Agrenes Live Demo</h5>
+                        </div>
+                        <div class="modal-body" style="padding: 5px 10px 5px 10px">
+                            <form role="form">
+                                <div class="form-group">
+                                    <label class="control-label" style="font-size: 15px">Name</label>
+                                    <div>
+                                        <input type="name" class="form-control input-lg" id="name" name="name" value="">
+                                    </div>
+                                    <label class="control-label" style="font-size: 15px; padding-top: 20px">Phone Number with Country code (For Example, +18885551234)</label>
+                                    <div>
+                                        <input type="text" class="form-control input-lg" id="phone" name="phone" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group" id="otp-input" style="display: none;font-size: 15px">
+                                    <div class="alert alert-danger" role="alert" id="otp-message"></div>
+                                    <label class="control-label" id="email-otp-prompt"></label>
+
+                                    <input type="number"  class="form-control input-lg" id="otp" name="password">
+
+                                </div>
+                                <div class="form-group">
+                                    <div style="text-align: center;">                                    
+                                        <button type="button" class="btn btn-success" id="login-button" onclick="getAgrenesDemoAppToken()" >
+                                            <span class="spinner-border spinner-border-sm" id="login-spinner" role="status" aria-hidden="true" style="display: none;"></span>
+                                            <span class="sr-only">Enter...</span> Enter
+                                        </button>                                    
+                                    </div>                                                                
+                                </div>                                                                                    
+                            </form>
+                            <!-- <div style="text-align: center; color: grey">  
+ <p style="font-size: 15px;">The entire source code of this conferencing app is available on <a href="https://github.com/mesibo/conferencing" target="_blank" style="color:grey;">GitHub</a></p>                          
+ <a style="color:grey; font-size: 30px" target="_blank" href="https://github.com/mesibo/conferencing" ><i class="fab fa-github"></i></a>
+ </div>   -->
+                            <div style="text-align: center; color: grey;">
+                                <p style="font-size: 10px; color: #666;">Using mesibo services and website is subject to mesibo <a style="color:#cw00868bccc;" href="https://mesibo.com/terms-of-use/">Terms of Service</a>.</p>
+                            </div>
+                        </div>
+                    </div><!-- /.modal-content --> 
+
+                </div>    
+            </div>
+        </div>
+        <script type="text/javascript">
+            if (login_init()) {
+                hideLoginScreen();
+                enterConfrencing();
+            }
+
+            if (isMobileDetected()) {
+                document.getElementById("mesibo-logo").style.display = "none";
+                document.getElementById("mesibo-logo-m").style.display = "block";
+            }
+
+        </script>
+    </body>
+</html>
+
