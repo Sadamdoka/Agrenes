@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>AGRENES PDF VIEWER</title>
+
+
+        <style>
+            canvas {
+                width: 1000px;
+                height: 100%;
+                border: 3px solid green;
+                border-radius: 10px;
+
+            }
+            button {
+                outline :0;
+                border: none;
+                border-radius: 3px;
+                color: white;
+                background: black;
+                width: 100px;
+                height: 40px;
+                transition: all .1s ease-in-out;
+            }
+            button:hover {
+                background:  none;
+                border: 3px solid black;
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div align="center">
+            <div id="loader">Loading ......</div>
+            <canvas id="pdf_canvas"></canvas>
+            <div class="container">
+                <button id="prev_page">Previous Page</button>
+                <button id="next_page">next Page</button>
+                <span id="current_page_num"></span>
+                of
+                <span id="total_page_num"></span>
+
+                <input type="text" id="page_num">
+                <button id="go_to_page">Go To Page</button>
+            </div>
+        </div>
+
+        
+        <!--
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+        <script type="text/javascript" src="https://mozilla.github.io/pdf.js/build/pdf.worker.js"></script>
+        -->
+        <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@2.2.228/build/pdf.min.js"></script>
+        
+        <!-- Replace pdf.js with downloaded pdf.js file -->
+        <script src="../dash/constants.js"></script>
+        <script src="../dash/gen.js"></script>
+        <script src="../dash/pdf.js"></script>
+    </body>
+</html>

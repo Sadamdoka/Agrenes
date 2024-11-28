@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Agrenes</title>
+        <!-- plugins:css -->
+        <link rel="stylesheet" href="../vendors/feather/feather.css">
+        <link rel="stylesheet" href="../vendors/ti-icons/css/themify-icons.css">
+        <link rel="stylesheet" href="../vendors/css/vendor.bundle.base.css">
+        <!-- endinject -->
+        <!-- Plugin css for this page -->
+        <link rel="stylesheet" href="../vendors/select2/select2.min.css">
+        <link rel="stylesheet" href="../vendors/select2-bootstrap-theme/select2-bootstrap.min.css">
+        <!-- End plugin css for this page -->
+        <!-- inject:css -->
+        <link rel="stylesheet" href="../css/vertical-layout-light/style.css">
+        <!-- endinject -->
+        <link rel="shortcut icon" href="../images/favicon-top-academix.png" />
+    </head>
+
+    <body>
+        <div class="container-scroller">
+            <div class="container-fluid page-body-wrapper full-page-wrapper">
+                <div class="content-wrapper d-flex align-items-center auth px-0">
+                    <div class="row w-100 mx-0">
+                        <div class="col-lg-4 mx-auto">
+                            <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+                                <div class="brand-logo">
+                                    <img src="../images/logo-top-academix.png"  alt="logo">
+                                </div>
+                                <h4>Hello! let's get started</h4>
+                                <h6 class="font-weight-light">Sign Up to continue.</h6>
+                                <form class="pt-3">
+
+                                    <div class="form-group">
+                                        <img src="../images/avatar.jpg" id="img" class="rounded mx-auto d-block" width="200" height="200" alt="profile"/>
+                                        <br>
+                                        <br>
+                                        <input type="file" class="file-upload-default" id="picture" onchange="setPic()">
+                                        <div class="input-group col-xs-12">
+                                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Picture" style="display: none">
+                                            <span class="input-group-btn">
+                                                <button class="file-upload-browse btn btn-primary" type="button">Upload Your Picture</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="display: none">
+                                        <label>School</label>
+                                        <select class="form-control" id="school" style="color: black">
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-lg" id="sch_name" placeholder="Organisation Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <select class="form-control" id="school_level" style="color: black">
+                                            <option disabled="" selected hidden>Select Organisation Type</option>
+                                            <option id="0">Institution</option>
+                                            <option id="1">Sacco</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea class="form-control" rows="5" id="sch_detail" placeholder="Organisation Information"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-lg" id="name" placeholder="Name">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="tel" class="form-control form-control-lg" id="tel" placeholder="Phone">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="bio">Bio</label>
+                                        <textarea class="form-control" id="bio" rows="4" placeholder="Bio Intro Description"></textarea>
+                                    </div><!-- comment -->
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-lg" id="address" placeholder="Address">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="email" class="form-control form-control-lg" id="email" placeholder="Email">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="password" class="form-control form-control-lg" id="password" placeholder="Password">
+                                    </div>
+                                    <div class="mt-3">
+                                        <button type="button" class="btn btn-primary" id="sms_test" style="display: none">Test SMS</button>
+                                        <a class="btn btn-block btn-info btn-lg font-weight-medium auth-form-btn" id="create_account" >Create Account</a>
+                                    </div>
+
+                                    <div class="text-center mt-4 font-weight-light">
+                                        Do you have an account? <a href="index.html" class="text-primary">Sign In</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+            </div>
+            <!-- page-body-wrapper ends -->
+        </div>
+
+        <div class="modal" id="activate_div" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Account Activation</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="model-body" style="margin: 10px">
+                        <label>User ID</label>
+                        <input type="text" class="form-control" id="act_userid"  placeholder="System User ID" disabled >
+                    </div>
+                    <div class="modal-body form-group">
+                        <form>
+                            <label>OTP</label>
+                            <input type="text" class="form-control" id="act_otp"  placeholder="OTP CODE">
+                            <br>
+
+                            <button type="button" class="btn btn-primary" id="act_btn">Confirm</button>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer"> 
+
+                        <label id="lab_call" style="display: block">Call 0751073507 for support if you don't get the OTP code</label>
+                        <button type="button" class="btn btn-success btn-icon-text" id="vari_btn" style="display: none">
+                            <i class="ti-check btn-icon-prepend"></i>                                                    
+                            Account Verified! Click here to Proceed to Login
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- container-scroller -->
+        <!-- plugins:js -->
+        <script src="../vendors/js/vendor.bundle.base.js"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page -->
+        <!-- End plugin js for this page -->
+        <!-- inject:js -->
+        <script src="../js/off-canvas.js"></script>
+        <script src="../js/hoverable-collapse.js"></script>
+        <script src="../js/template.js"></script>
+        <script src="../js/settings.js"></script>
+        <script src="../js/todolist.js"></script>
+        <script src="../vendors/select2/select2.min.js"></script>
+        <script src="../js/select2.js"></script>
+        <script src="../js/file-upload.js"></script>
+        <!-- endinject -->
+
+        <script src="../dash/gen.js"></script>
+        <script src="../dash/constants.js"></script>
+        <script src="../dash/school_create.js"></script>
+    </body>
+
+</html>
